@@ -32,8 +32,4 @@ different and arbitrary customer projects you're probably within the area of pro
 ## Target Architecture
 
 
-
-
-- Differenciation between 'product' and 'solution' and 'project development'
-
 [Overview]: site/img/overview.png
