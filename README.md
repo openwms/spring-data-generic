@@ -27,7 +27,7 @@ different and arbitrary customer projects you're probably within the area of pro
 
 ## Baseline Architecture
 
-[site/img/overview.png]
+![Overview]
 
 ## Target Architecture
 
@@ -35,3 +35,5 @@ different and arbitrary customer projects you're probably within the area of pro
 
 
 - Differenciation between 'product' and 'solution' and 'project development'
+
+[Overview]: site/img/overview.png
