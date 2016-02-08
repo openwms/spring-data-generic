@@ -27,7 +27,7 @@ different and arbitrary customer projects you're probably within the area of pro
 
 ## Baseline Architecture
 
-[[site/img/overview.png]]
+[site/img/overview.png]
 
 ## Target Architecture
 
