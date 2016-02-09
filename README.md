@@ -29,7 +29,7 @@ And that's obviously where you need to abstract the abstraction. I don't like ab
 at all, but this needs to be driven from a business perspective and not from a technical point of view.
 
 
-## Demanded Architecture
+## Target Architecture
 
 Let's assume we would like to build an architecture like here. At top we have any kind of
 business application that needs to fetch data from one or more data sources underneath. The kind of data, that needs to
@@ -70,8 +70,6 @@ a folder or document has.
 
 A dossier of documents can have multiple presentation. For example it may look like a flat list of documents, or as
 tree-like structure.
-
-## Target Architecture
 
 
 [Overview]: site/img/overview.png
