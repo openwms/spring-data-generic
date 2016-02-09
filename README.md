@@ -25,38 +25,56 @@ in case your persistent mechanism (not only storage) remains the same, for examp
 the persistence provider in a customer project. But when you start building a software component that can be used across
 different and arbitrary customer projects you probably end up in the area of product, solution or framework development.
 
-And thats obviously the case to build another abstraction over an abstraction. I don't like abstractions of a framework
-at all, but this has to be decided from a business value view and not from a technical view point.
+And that's obviously where you need to abstract the abstraction. I don't like abstractions of a framework
+at all, but this needs to be driven from a business perspective and not from a technical point of view.
 
 
 ## Demanded Architecture
 
-Let's assume we would build an architecture like shown in the next overview picture. At top we have any kind of
-business application that needs to fetch data from one or more underlying data sources. The kind of data, that needs to
-be fetched is not of data coming from a relational database but more as of coming from a document store whereas
-a DMS (Document Management System) takes care of storing and finding data. So this is the first layer of abstraction:
-Instead of abstracting from a database we need to abstract from data sources. I could have invented a project called
-`Spring Data DMS` with several sub-projects but this is: a) not my job and b) not my hobby.
+Let's assume we would like to build an architecture like here. At top we have any kind of
+business application that needs to fetch data from one or more data sources underneath. The kind of data, that needs to
+be fetched is structured data containing binary documents and document metadata that comes from an arbitrary document
+store. Several types of document store exist
 
-Therefor we call this project 'Ameba Data DMS' instead of 'Spring Data DMS'.
+- A DMS (Document Management System)
+- A solution built with a NoSQL document store (like MongoDB) to store the document metadata and the document binaries
+- A solution with a relational database that keeps the document metadata stored in tables
 
-Customers need to...
-
-### Abstract from ECM
-
-... Systems. A lot of commercial as well as open-source solutions exist in the area of `Document Management Systems`s.
-An DMS stores binary content of a proprietary file system along with metadata needed to find and get back the physical
- content.
-
-### Build Dossiers from
+The latter two solutions may keep binary files on the filesystem or in the database. This depends on the current project
+requirements.
 
 ![Overview]
 
+### Abstract the ECM
 
+A lot of commercial as well as open-source solutions exist in the area of `Document Management Systems`.
+The DMS stores binary content on a proprietary file system along with metadata that's needed to retrieve the physical
+content again. Each DMS has it's own interfaces exposed in several technologies, like webservices, Java API, RMI. So here
+is our first level of abstraction (Integration Layer). An adapter implementation exists for all supported solutions:
+
+- DMS Adapter for each supported DMS
+- NoSQL Adapter for the MongoDB solution
+- RDBMS Adapter for relational databases
+
+An adapter has to implement a generic set of CRUD operation. The `Ameba Data DMS` component uses one or more adapter
+implementations to provide high-level functionality to the business application.
+
+### Building Dossiers of Documents
+
+Building a structured dossier of documents is one of the high-level functions that `Ameba Data DMS` provides. What is
+the key aspect of a structured dossier? Is it different to a set of documents? A dossier contains folders where each folder
+may contain documents and where a document may exist in multiple folders. The dossier itself has metadata assigned, like
+a folder or document has.
+
+![RIM]
+
+A dossier of documents can have multiple presentation. For example it may look like a flat list of documents, or as
+tree-like structure.
 
 ## Target Architecture
 
 
 [Overview]: site/img/overview.png
+[RIM]: site/img/RIM.png
 
 
