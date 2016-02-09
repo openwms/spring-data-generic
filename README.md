@@ -71,8 +71,21 @@ a folder or document has.
 A dossier of documents can have multiple presentation. For example it may look like a flat list of documents, or as
 tree-like structure.
 
+## Component Design
+
+### NoSQL Adapter
+
+This component aims to use MongoDB as metadata and binary content store. It comes with a `Filesystem Adapter` as
+`DocumentStore`. If a projects pulls the `Filesystem Adapter` onto the classpath, all documents were stored on the
+filesystem, otherwise `GridFS Store` is used to store documents in MongoDB.
+
+![nosql_adapter]
+
+The adapter implementation uses Spring Data MongoDB to ease access to MongoDB.
+
 
 [Overview]: site/img/overview.png
 [RIM]: site/img/RIM.png
+[nosql_adapter]: site/img/nosql_adapter.png
 
 
