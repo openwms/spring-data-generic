@@ -31,12 +31,12 @@ may change (i.e. from relational to NoSQL databases).
 And that's obviously where you need to abstract from an abstraction. I'm not a friend of framework abstractions,
 but this needs to be seens from a business perspective and not from a technical point of view.
 
-So what are we going to do here? In the following example we've a `DocumentServiceImpl` (a Spring managed Service) that
+So what are we going to build here? In the following example we've a `DocumentServiceImpl` (a Spring managed Service) that
 acts on `ServiceOperations`. In addition we could have `FindOperations` or `DeleteOperations` as well. Two possible implementations
-of `SaveOperations` exist, both called `Save`, but in different packages. Each `Save` interface implements the methods
+of `SaveOperations` exist, both called `Save`, but put in different packages. Each `Save` interface implements the methods
 of `SaveOperations` with Java 8 default implementations and delegates to the concrete repository. Looks like a lightweight
 Generic DAO so far. An implementing class of `Save` is only responsible to provide the Spring Data repository needed to
-perform default methods.
+perform the actions within the default methods.
 
 ![generic_dao]
 
