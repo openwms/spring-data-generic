@@ -45,7 +45,7 @@ implementation.
 
 ## Target Architecture
 
-Let's assume we would like to build an architecture like here. At top we have any kind of
+Let's assume we would like to build an architecture like shown beneath. At top we have any kind of
 business application that needs to fetch data from one or more data sources underneath. The kind of data, that needs to
 be fetched is structured data containing binary documents and document metadata that comes from an arbitrary document
 store. Several types of document store exist
