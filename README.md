@@ -15,7 +15,7 @@ is built on top of a product, has it's own lifecycle but cannot run without the 
 
 ### Project
 
-The project is the customer project that consists of products, solutions and custom code. It's pursue is to fulfill
+The project is the customer project that consists of products, solutions and custom code. It's purpose is to fulfill
 current customer requirements. It is dedicated for that specific need and is not intended to be used for other customers
 .
 
