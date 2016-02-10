@@ -40,9 +40,9 @@ perform the actions within the default methods.
 
 ![generic_dao]
 
-Putting the Spring Data interface (`MongoDocumentRepository` and `JpaDocumentRepository` inside the implementing class
+Putting the Spring Data interface (`MongoDocumentRepository` and `JpaDocumentRepository`) inside the implementing class
 of `Save` eliminates the need for additional class files. For each entity class we end up with just one custom repository
-implementation.
+implementation that inherits the Generic DAO functionality.
 
 ## Target Architecture
 
@@ -55,7 +55,7 @@ store. Several types of document store exist
 - A solution built with a NoSQL document store (like MongoDB) to store the document metadata and the document binaries
 - A solution with a relational database that keeps the document metadata stored in tables
 
-The latter two solutions may keep binary files on the filesystem or in the database. This depends on the current project
+The latter two solutions may keep binary files on the filesystem or in the database. This depends on the project
 requirements.
 
 ![Overview]
@@ -63,11 +63,12 @@ requirements.
 ### Abstract the ECM
 
 A lot of commercial as well as open-source solutions exist in the area of `Document Management Systems`.
-The DMS stores binary content on a proprietary file system along with metadata that's needed to retrieve the physical
-content again. Each DMS has it's own interfaces exposed in several technologies, like webservices, Java API, RMI. So here
-is our first level of abstraction (Integration Layer). An adapter implementation exists for all supported solutions:
+The DMS stores binary content on a proprietary file system along with metadata that's needed to look up and retrieve the
+physical content again. Each DMS has it's own interfaces exposed in several technologies, like webservices, Java API,
+RMI. So here is our first level of abstraction (Integration Layer). An adapter implementation exists for all supported
+solutions:
 
-- DMS Adapter for each supported DMS
+- DMS Adapter for every supported DMS
 - NoSQL Adapter for the MongoDB solution
 - RDBMS Adapter for relational databases
 
