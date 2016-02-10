@@ -72,12 +72,12 @@ solutions:
 - NoSQL Adapter for the MongoDB solution
 - RDBMS Adapter for relational databases
 
-An adapter has to implement a generic set of CRUD operation. The `Ameba Data DMS` component uses one or more adapter
+An adapter has to implement a generic set of CRUD operation. The `Interface21 Data DMS` component uses one or more adapter
 implementations to provide high-level functionality to the business application.
 
 ### Building Dossiers of Documents
 
-Building a structured dossier of documents is one of the high-level functions that `Ameba Data DMS` provides. What is
+Building a structured dossier of documents is one of the high-level functions that `Interface21 Data DMS` provides. What is
 the key aspect of a structured dossier? Is it different to a set of documents? A dossier contains folders where each folder
 may contain documents and where a document may exist in multiple folders. The dossier itself has metadata assigned, like
 a folder or document has.
