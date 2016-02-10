@@ -73,6 +73,8 @@ tree-like structure.
 
 ## Component Design
 
+![generic_dao]
+
 ### NoSQL Adapter
 
 This component aims to use MongoDB as metadata and binary content store. It comes with a `Filesystem Adapter` as
@@ -87,5 +89,6 @@ The adapter implementation uses Spring Data MongoDB to ease access to MongoDB.
 [Overview]: site/img/overview.png
 [RIM]: site/img/RIM.png
 [nosql_adapter]: site/img/nosql_adapter.png
+[generic_dao]: site/img/generic_dao.png
 
 
