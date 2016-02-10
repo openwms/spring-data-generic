@@ -32,15 +32,15 @@ but this needs to be seens from a business perspective and not from a technical 
 
 So what are we going to do here? In the following example we've a `DocumentServiceImpl` (a Spring managed Service) that
 acts on `ServiceOperations`. In addition we could have `FindOperations` or `DeleteOperations` as well. Two possible implementations
-exist of `SaveOperations`, both called `Save`, but in different packages. Each `Save` interface implements the methods
+of `SaveOperations` exist, both called `Save`, but in different packages. Each `Save` interface implements the methods
 of `SaveOperations` with Java 8 default implementations and delegates to the concrete repository. Looks like a lightweight
 Generic DAO so far. An implementing class of `Save` is only responsible to provide the Spring Data repository needed to
 perform default methods.
 
 ![generic_dao]
 
-Putting the Spring Data interface (`MongoDocumentRepository` and `JpaDocumentRepository` inside the actual implementation
-of `Save` eliminates the need for additional class files. Per entity class we end up with just one custom repository
+Putting the Spring Data interface (`MongoDocumentRepository` and `JpaDocumentRepository` inside the implementing class
+of `Save` eliminates the need for additional class files. For each entity class we end up with just one custom repository
 implementation.
 
 ## Target Architecture
