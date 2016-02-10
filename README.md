@@ -73,7 +73,10 @@ solutions:
 - RDBMS Adapter for relational databases
 
 An adapter has to implement a generic set of CRUD operation. The `Interface21 Data DMS` component uses one or more adapter
-implementations to provide high-level functionality to the business application.
+implementations to provide high-level functionality to the business application. Saving and removing data in a DMS is
+often straight forward and similar between the different DMS - but querying for document metadata is not. Every DMS has
+it's own query language defined, so we'll need to build yet another query language above. Nevertheless a `#findBy(ID)`
+and `#findAll()` are easy to implement for all of them.
 
 ### Building Dossiers of Documents
 
