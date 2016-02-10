@@ -42,15 +42,6 @@
         <ameba-lib.version>1.2</ameba-lib.version>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
     <dependencies>
         <dependency>
             <groupId>org.ameba</groupId>
@@ -125,7 +116,6 @@
     </pluginRepositories>
 
     <modules>
-        <module>baseline</module>
         <module>generic</module>
     </modules>
 </project>
