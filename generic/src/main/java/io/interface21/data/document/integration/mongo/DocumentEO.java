@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration.jpa;
+package io.interface21.data.document.integration.mongo;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * A ModuleConfiguration.
+ * A DocumentEO.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-@Configuration
-@EnableJpaRepositories(considerNestedRepositories = true, basePackageClasses = JpaConfiguration.class)
-class JpaConfiguration {
+@Document
+class DocumentEO extends MongoBaseEntity {
 }

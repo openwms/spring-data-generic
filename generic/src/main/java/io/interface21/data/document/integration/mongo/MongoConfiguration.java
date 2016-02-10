@@ -13,32 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document;
+package io.interface21.data.document.integration.mongo;
 
-import io.interface21.document.integration.SaveOperations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 /**
- * A DocumentServiceImpl.
+ * A MongoConfiguration.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-@Service
-class DocumentServiceImpl implements DocumentService {
-
-    private SaveOperations ops;
-
-    @Autowired
-    protected DocumentServiceImpl(SaveOperations ops) {
-        this.ops = ops;
-    }
-
-    /*~
-      A service implementation is completely independent from the underlying persistence solution. This might be a NoSQL
-      store as well as a relational database accessed via JPA, oder JDBC.
-     */
-
+@Configuration
+@EnableMongoRepositories(considerNestedRepositories = true, basePackageClasses = MongoConfiguration.class)
+class MongoConfiguration {
 }

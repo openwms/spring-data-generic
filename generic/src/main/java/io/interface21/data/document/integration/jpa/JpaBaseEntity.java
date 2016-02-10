@@ -13,18 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration.jpa;
+package io.interface21.data.document.integration.jpa;
 
-import javax.persistence.Entity;
+import io.interface21.data.document.integration.BaseEntity;
+
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
- * A DocumentEO.
+ * A JpaBaseEntity.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-@Entity
-class DocumentEO extends JpaBaseEntity {
+@MappedSuperclass
+abstract class JpaBaseEntity implements BaseEntity<Long> {
 
+    @Id
+    private Long id;
 }

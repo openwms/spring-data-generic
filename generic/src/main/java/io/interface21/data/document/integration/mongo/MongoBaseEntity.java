@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document;
+package io.interface21.data.document.integration.mongo;
+
+import io.interface21.data.document.integration.BaseEntity;
 
 /**
- * A DocumentService.
+ * A MongoBaseEntity.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-public interface DocumentService {
+public abstract class MongoBaseEntity implements BaseEntity<String> {
 }

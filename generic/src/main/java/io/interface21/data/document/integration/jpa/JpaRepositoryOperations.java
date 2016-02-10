@@ -13,39 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration.mongo;
+package io.interface21.data.document.integration.jpa;
 
-import io.interface21.document.integration.SaveOperations;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import io.interface21.data.document.integration.SaveOperations;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Collection;
 
 /**
- * A MongoRepositoryOperations.
+ * A JpaRepositoryFunctions.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-interface MongoRepositoryOperations<T extends MongoBaseEntity> {
+interface JpaRepositoryOperations<T extends JpaBaseEntity> {
 
     /**
      * Implementations must provide the concrete repository they're working on.
      *
-     * @return A typed MongoRepository
+     * @return A typed JpaRepository
      */
-    MongoRepository<T, String> getRepository();
+    JpaRepository<T, Long> getRepository();
 
     /**
      * Adapter to {@link SaveOperations SaveOperations}.
      *
-     * @param <T> Any type of {@link MongoBaseEntity}
+     * @param <T> Any type of {@link JpaBaseEntity}
      */
-    interface Save<T extends MongoBaseEntity> extends MongoRepositoryOperations<T>, SaveOperations<T> {
+    interface Save<T extends JpaBaseEntity> extends JpaRepositoryOperations<T>, SaveOperations<T> {
 
         /**
          * {@inheritDoc}
-         * Uses an instance of {@link org.springframework.data.mongodb.repository.MongoRepository MongoRepository} to save the
+         * Uses an instance of {@link org.springframework.data.jpa.repository.JpaRepository JpaRepository} to save the
          * entity.
          */
         @Override
@@ -55,7 +55,7 @@ interface MongoRepositoryOperations<T extends MongoBaseEntity> {
 
         /**
          * {@inheritDoc}
-         * Uses an instance of {@link org.springframework.data.mongodb.repository.MongoRepository MongoRepository} to save the
+         * Uses an instance of {@link org.springframework.data.jpa.repository.JpaRepository JpaRepository} to save the
          * entities.
          */
         @Override

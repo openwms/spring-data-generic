@@ -13,32 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration;
-
-import java.util.Collection;
+package io.interface21.data.document;
 
 /**
- * A SaveOperations.
+ * A DocumentService.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-public interface SaveOperations<T extends BaseEntity<?>> {
-
-    /**
-     * Saves the entity instance and return the saved instance.
-     *
-     * @param entity The instance to save
-     * @return The saved instance, this may differ from the instance to save
-     */
-    T save(T entity);
-
-    /**
-     * Saves a collection of entities and returns the saved entity collection.
-     *
-     * @param entities The collection of instances to save
-     * @return The collection of saved entities
-     */
-    Collection<T> save(Collection<T> entities);
+public interface DocumentService {
 }

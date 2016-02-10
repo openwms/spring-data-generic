@@ -13,16 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration.mongo;
+package io.interface21.data.document.integration.jpa;
 
-import io.interface21.document.integration.BaseEntity;
+import javax.persistence.Entity;
 
 /**
- * A MongoBaseEntity.
+ * A DocumentEO.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-public abstract class MongoBaseEntity implements BaseEntity<String> {
+@Entity
+class DocumentEO extends JpaBaseEntity {
+
 }

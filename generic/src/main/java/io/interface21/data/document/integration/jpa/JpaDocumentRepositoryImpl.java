@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration.mongo;
+package io.interface21.data.document.integration.jpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * A MongoDocumentRepositoryImpl.
+ * A JpaDocumentRepositoryImpl.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
 @Repository
-class MongoDocumentRepositoryImpl implements MongoRepositoryOperations.Save<DocumentEO> {
+class JpaDocumentRepositoryImpl implements JpaRepositoryOperations.Save<DocumentEO> {
 
-    private MongoDocumentRepository mongoRepository;
+    private JpaDocumentRepository jpaRepository;
 
     /**
      * Constructor with not-null members.
@@ -37,21 +37,22 @@ class MongoDocumentRepositoryImpl implements MongoRepositoryOperations.Save<Docu
      * @param repository The repo to work on
      */
     @Autowired
-    protected MongoDocumentRepositoryImpl(MongoDocumentRepository repository) {
-        this.mongoRepository = repository;
+    protected JpaDocumentRepositoryImpl(JpaDocumentRepository repository) {
+        this.jpaRepository = repository;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public MongoRepository<DocumentEO, String> getRepository() {
-        return mongoRepository;
+    public JpaRepository<DocumentEO, Long> getRepository() {
+        return jpaRepository;
     }
 
     /**
      * The inner definition of Spring Data repository. No need to put this into a separate class file.
      */
-    interface MongoDocumentRepository extends MongoRepository<DocumentEO, String> {
+    interface JpaDocumentRepository extends JpaRepository<DocumentEO, Long> {
+
     }
 }

@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration;
+package io.interface21.data.document.integration.jpa;
 
-import java.io.Serializable;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
- * A BaseEntity.
+ * A ModuleConfiguration.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-public interface BaseEntity<ID extends Serializable> {
+@Configuration
+@EnableJpaRepositories(considerNestedRepositories = true, basePackageClasses = JpaConfiguration.class)
+class JpaConfiguration {
 }

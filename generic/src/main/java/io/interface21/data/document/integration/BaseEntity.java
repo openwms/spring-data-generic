@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.interface21.document.integration.mongo;
+package io.interface21.data.document.integration;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import java.io.Serializable;
 
 /**
- * A MongoConfiguration.
+ * A BaseEntity.
  *
  * @author <a href="mailto:scherrer@openwms.org">Heiko Scherrer</a>
  * @version 1.0
  * @since 1.0
  */
-@Configuration
-@EnableMongoRepositories(considerNestedRepositories = true, basePackageClasses = MongoConfiguration.class)
-class MongoConfiguration {
+public interface BaseEntity<ID extends Serializable> {
 }
