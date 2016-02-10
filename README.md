@@ -4,8 +4,8 @@
 
 ### Product
 
-The product has it's own lifecycle, not bound to any customer needs. The requirements of a product are almost all collected
-from the experience of former customer projects, but as well as from market analysis and demanded customer needs.
+The product has it's own lifecycle and is designed to fulfill common required customer demands. The requirements of a
+product are almost all collected from the experience of former customer projects, but as well as from market analysis.
 
 ### Solution
 
