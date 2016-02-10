@@ -22,7 +22,7 @@ current customer requirements. It is dedicated for that specific need and is not
 ## Why to wrap an abstraction?
 
 Spring Data already tries to abstract from abstractions - like from JPA. Though usually you're fine with Spring Data,
-because your persistence mechanism will not change to often. It is very unlikely that you have to change the persistence
+because your persistence mechanism will not change too often. It is very unlikely that you have to change the persistence
 provider (Hibernate, Eclipselink) in a customer project. But when you start building a software component that can be
 used across arbitrary customer projects you probably end up in the area of product, solution or framework
 development. In this case the JPA persistence provider may change or even better the whole persistence mechanism
