@@ -37,7 +37,7 @@ class DocumentServiceImpl implements DocumentService {
     }
 
     /*~
-      A service implementation is completely independent from the underlying persistence solution. This might be a NoSQL
+      A service implementation, completely independent from the underlying persistence solution. This might be a NoSQL
       store as well as a relational database accessed via JPA, oder JDBC.
      */
 
