@@ -92,8 +92,8 @@ tree-like structure.
 ### NoSQL Adapter
 
 This component aims to use MongoDB as metadata and binary content store. It comes with a `Filesystem Adapter` as
-`DocumentStore`. If a projects pulls the `Filesystem Adapter` onto the classpath, all documents were stored on the
-filesystem, otherwise `GridFS Store` is used to store documents in MongoDB.
+`DocumentStore`. If a projects pulls in the `Filesystem Adapter` onto the classpath, all documents were stored on the
+filesystem, otherwise `GridFS Store` is used to store the binary document content in MongoDB.
 
 ![nosql_adapter]
 
