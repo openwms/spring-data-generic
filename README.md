@@ -41,8 +41,8 @@ perform the actions within the default methods.
 ![generic_dao]
 
 Putting the Spring Data interface (`MongoDocumentRepository` and `JpaDocumentRepository`) inside the implementing class
-of `Save` eliminates the need for additional class files. For each entity class we end up with just one custom repository
-implementation that inherits the Generic DAO functionality.
+of `Save` eliminates the need for additional class files for new entity classes. For each entity class we end up with just one custom repository
+implementation that inherits the Generic DAO functionality. Der
 
 ## Target Architecture
 
