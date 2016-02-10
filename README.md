@@ -21,13 +21,16 @@ to fulfill customer needs without the need for other projects.
 ## Why to wrap an abstraction?
 
 Spring Data already tries to abstract from abstractions - like from JPA. Though usually you can go with Spring Data,
-in case your persistent mechanism (not only storage) remains the same, for example, when you often don't need to change
-the persistence provider in a customer project. But when you start building a software component that can be used across
-different and arbitrary customer projects you probably end up in the area of product, solution or framework development.
+because your persistence mechanism remains the same. For example, it is unlikely that you have to change the persistence
+provider (Hibernate, Eclipselink) in a customer project. But when you start building a software component that can be
+used across arbitrary customer projects you probably end up in the area of product, solution or framework
+development. In this case the JPA persistence provider may change or even better the whole persistence mechanism
+may change (i.e. from relational to NoSQL databases).
 
-And that's obviously where you need to abstract the abstraction. I don't like abstractions of a framework
-at all, but this needs to be driven from a business perspective and not from a technical point of view.
+And that's obviously where you need to abstract from an abstraction. I'm not a friend of framework abstractions,
+but this needs to be seens from a business perspective and not from a technical point of view.
 
+![generic_dao]
 
 ## Target Architecture
 
@@ -72,8 +75,6 @@ A dossier of documents can have multiple presentation. For example it may look l
 tree-like structure.
 
 ## Component Design
-
-![generic_dao]
 
 ### NoSQL Adapter
 
